@@ -5,46 +5,46 @@
         <title>Calculator</title>
         <link rel="stylesheet" href="style.css">
     </head>
-    <body>
-        <script src="main.js"></script>
+    <body>  
+       
         <div class="container">
             <div class="calculator">
                 <form>
                     <div class="display">
-                        <input type="text" name="display">
+                        <input type="text"  id="Display">
                     </div>                   
                     <div>
-                        <input class="blue" type="button" value="AC" onclick="display.value = ''">
+                        <input class="blue" type="button" value="AC" onclick="clearDisplay()">
                         <input class="blue" type="button" value="DEL" onclick="display.value = display.value.toString().slice(0,-1)">
-                        <input class="blue" type="button" value="%"onclick="display.value += '%'">
-                        <input class="op" type="button" value="/" onclick="display.value += '/'">
+                        <input class="blue" type="button" value="%"onclick="getOperator('%')">
+                        <input class="op" type="button" value="/" onclick="getOperator('/')">
                     </div>
                     <div>
-                        <input class="num" type="button" value="7" onclick="display.value += '7'">
-                        <input class="num" type="button" value="8"onclick="display.value += '8'">
-                        <input class="num" type="button" value="9"onclick="display.value += '9'">
-                        <input class="op"  type="button" value="*"onclick="display.value += '*'">
+                        <input class="num" type="button" value="7" onclick="getNumber(7)"></input>
+                        <input class="num" type="button" value="8"onclick="getNumber(8)">
+                        <input class="num" type="button" value="9"onclick="getNumber(9)">
+                        <input class="op"  type="button" value="*"onclick="getOperator('*')">
                     </div>
                     <div>
-                        <input class="num" type="button" value="4"onclick="display.value += '4'">
-                        <input class="num" type="button" value="5"onclick="display.value += '5'">
-                        <input class="num" type="button" value="6"onclick="display.value += '6'">
-                        <input class="op" type="button" value="-"onclick="display.value += '-'">
+                        <input class="num" type="button" value="4" onclick="getNumber(4)">
+                        <input class="num" type="button" value="5"onclick="getNumber(5)">
+                        <input class="num" type="button" value="6"onclick="getNumber(6)">
+                        <input class="op" type="button" value="-"onclick="getOperator('-')">
                     </div>
                     <div>
-                        <input class="num"type="button" value="1"onclick="display.value += '1'">
-                        <input class="num"type="button" value="2"onclick="display.value += '2'">
-                        <input class="num"type="button" value="3"onclick="display.value += '3'">
-                        <input class="op"type="button" value="+"onclick="display.value += '+'">
+                        <input class="num"type="button" value="1"onclick="getNumber(1)">
+                        <input class="num"type="button" value="2"onclick="getNumber(2)">
+                        <input class="num"type="button" value="3"onclick="getNumber(3)">
+                        <input class="op"type="button" value="+"onclick="getOperator('+')">
                     </div>
                     <div>
-                        <input class="num"type="button" value="0"onclick="display.value += '0'">
-                        <input class="num"type="button" value="."onclick="display.value += '.'">
-                        <input class="op"type="button" value="=" id="equal"onclick="display.value += ''">
+                        <input class="num"type="button" value="0"onclick="getNumber(0)">
+                        <input class="num"type="button" value="00"onclick="getNumber(00)">
+                        <input class="op"type="button" value="=" id="equal" onclick="calculateEquals()">
                     </div>
                 </form>
             </div>
         </div>
-
+        <script src="main.js"></script>
     </body>
 </html>
